@@ -58,7 +58,7 @@ async function main() {
         notes: 'test from sample',
         fromLocation: paymentMethod,
         toLocation: {
-            typeOf: mocoinapi.factory.ownershipInfo.AccountGoodType.CoinAccount,
+            typeOf: mocoinapi.factory.ownershipInfo.AccountGoodType.Account,
             accountNumber: coinAccount.accountNumber
         }
     });

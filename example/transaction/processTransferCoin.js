@@ -46,12 +46,12 @@ async function main() {
         amount: 100,
         notes: 'test from sample',
         fromLocation: {
-            typeOf: mocoinapi.factory.ownershipInfo.AccountGoodType.CoinAccount,
+            typeOf: mocoinapi.factory.ownershipInfo.AccountGoodType.Account,
             accountNumber: coinAccount.accountNumber
         },
         toLocation: {
-            typeOf: mocoinapi.factory.ownershipInfo.AccountGoodType.CoinAccount,
-            accountNumber: '08102400071'
+            typeOf: mocoinapi.factory.ownershipInfo.AccountGoodType.Account,
+            accountNumber: '08103100071'
         }
     });
     console.log('取引を開始しました。');

@@ -43,7 +43,7 @@ async function main() {
         amount: 1,
         notes: 'test from sample',
         toLocation: {
-            typeOf: mocoinapi.factory.ownershipInfo.AccountGoodType.CoinAccount,
+            typeOf: mocoinapi.factory.ownershipInfo.AccountGoodType.Account,
             accountNumber: coinAccount.accountNumber
         }
     });

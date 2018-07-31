@@ -19,11 +19,11 @@ async function main() {
 
     accounts = accounts.filter((a) => a.status === 'Opened');
     console.log(accounts.length, 'opened accounts found.');
-    console.log('account number:', accounts[0].accountNumber);
 
     const loginTicket = authClient.verifyIdToken({});
     console.log('username is', loginTicket.getUsername());
 
+    // 口座未開設であれば開設
     if (accounts.length === 0) {
         const newAccount = await personService.openCoinAccount({
             personId: 'me',
@@ -45,7 +45,7 @@ async function main() {
         console.log(moneyTransferActions.length, 'moneyTransfer actions found.');
         console.log(moneyTransferActions.map((a) => {
             return util.format(
-                '%s %s %s %s %s[%s] -> %s %s[%s] @%s',
+                '%s %s %s %s %s[%s] -> %s %s[%s] @%s ### %s',
                 a.endDate,
                 a.typeOf,
                 a.amount,
@@ -55,7 +55,8 @@ async function main() {
                 (a.recipient !== undefined) ? a.recipient.name : a.recipient.id,
                 a.toLocation.typeOf,
                 (a.toLocation.accountNumber !== undefined) ? a.toLocation.accountNumber : '',
-                a.purpose.typeOf
+                a.purpose.typeOf,
+                a.description
             );
         }).join('\n'));
     }
