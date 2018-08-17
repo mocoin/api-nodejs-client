@@ -1,7 +1,6 @@
 // tslint:disable:no-implicit-dependencies
 /**
  * OAuth2 client test
- * @ignore
  */
 import { BAD_REQUEST, FORBIDDEN, INTERNAL_SERVER_ERROR, OK, UNAUTHORIZED } from 'http-status';
 import * as nock from 'nock';

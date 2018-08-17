@@ -1,4 +1,4 @@
-# MOCOIN API client library for Node.js
+# Mocoin API client library for Node.js
 
 ## Table of contents
 
@@ -13,8 +13,8 @@ npm install @mocoin/api-nodejs-client
 
 ### Environment variables
 
-| Name    | Required | Value                          | Purpose |
-|---------|----------|--------------------------------|---------|
+| Name    | Required | Value                      | Purpose |
+|---------|----------|----------------------------|---------|
 | `DEBUG` | false    | mocoin-api-nodejs-client:* | Debug   |
 
 ## License

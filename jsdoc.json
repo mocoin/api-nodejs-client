@@ -24,7 +24,7 @@
         "dateFormat": "ddd MMM Do YYYY",
         "outputSourceFiles": true,
         "outputSourcePath": true,
-        "systemName": "MOCOIN API client library for Node.js",
+        "systemName": "Mocoin API client library for Node.js",
         "footer": "",
         "navType": "vertical",
         "theme": "cosmo",

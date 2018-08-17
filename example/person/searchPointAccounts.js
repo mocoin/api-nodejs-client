@@ -38,6 +38,7 @@ async function main() {
         // });
         // console.log('account closed.');
     } else {
+        console.log('account:', accounts[0]);
         // const moneyTransferActions = await personService.searchCoinAccountMoneyTransferActions({
         //     personId: 'me',
         //     accountNumber: accounts[0].accountNumber

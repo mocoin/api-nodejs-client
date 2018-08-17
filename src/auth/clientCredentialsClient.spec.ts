@@ -1,10 +1,7 @@
 // tslint:disable:no-implicit-dependencies
-
 /**
  * clientCredentials client test
- * @ignore
  */
-
 import { BAD_REQUEST, INTERNAL_SERVER_ERROR, OK } from 'http-status';
 import * as nock from 'nock';
 import * as assert from 'power-assert';

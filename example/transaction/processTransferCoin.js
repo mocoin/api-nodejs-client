@@ -47,10 +47,12 @@ async function main() {
         notes: 'test from sample',
         fromLocation: {
             typeOf: mocoinapi.factory.ownershipInfo.AccountGoodType.Account,
+            accountType: mocoinapi.factory.accountType.Coin,
             accountNumber: coinAccount.accountNumber
         },
         toLocation: {
             typeOf: mocoinapi.factory.ownershipInfo.AccountGoodType.Account,
+            accountType: mocoinapi.factory.accountType.Coin,
             accountNumber: '08103100071'
         }
     });

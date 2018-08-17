@@ -1,7 +1,6 @@
 // tslint:disable:no-implicit-dependencies
 /**
  * ログインチケットテスト
- * @ignore
  */
 import * as assert from 'power-assert';
 import { LoginTicket } from './loginTicket';
