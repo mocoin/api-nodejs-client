@@ -12,9 +12,16 @@ async function main() {
         endpoint: process.env.MOCOIN_API_ENDPOINT,
         auth: authClient
     });
-    let accounts = await personService.searchCoinAccounts({
-        personId: 'me'
-    });
+    let accounts = await personService.searchCoinAccounts(
+        {
+            personId: 'me'
+        },
+        {
+            headers: {
+                'Ocp-Apim-Subscription-Key': process.env.APIM_SUBSCRIPTION_KEY
+            }
+        }
+    );
     console.log(accounts.length, 'accounts found.');
 
     accounts = accounts.filter((a) => a.status === 'Opened');
@@ -25,10 +32,17 @@ async function main() {
 
     // 口座未開設であれば開設
     if (accounts.length === 0) {
-        const newAccount = await personService.openCoinAccount({
-            personId: 'me',
-            name: loginTicket.getUsername()
-        });
+        const newAccount = await personService.openCoinAccount(
+            {
+                personId: 'me',
+                name: loginTicket.getUsername()
+            },
+            {
+                headers: {
+                    'Ocp-Apim-Subscription-Key': process.env.APIM_SUBSCRIPTION_KEY
+                }
+            }
+        );
         console.log('account opened.', newAccount.accountNumber);
 
         // 口座解約の場合
@@ -39,10 +53,16 @@ async function main() {
         // console.log('account closed.');
     } else {
         console.log('account:', accounts[0]);
-        const moneyTransferActions = await personService.searchCoinAccountMoneyTransferActions({
-            personId: 'me',
-            accountNumber: accounts[0].accountNumber
-        });
+        const moneyTransferActions = await personService.searchCoinAccountMoneyTransferActions(
+            {
+                personId: 'me',
+                accountNumber: accounts[0].accountNumber
+            },
+            {
+                headers: {
+                    'Ocp-Apim-Subscription-Key': process.env.APIM_SUBSCRIPTION_KEY
+                }
+            });
         console.log(moneyTransferActions.length, 'moneyTransfer actions found.');
         console.log(moneyTransferActions.map((a) => {
             return util.format(
